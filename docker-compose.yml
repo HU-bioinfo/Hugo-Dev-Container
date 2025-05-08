@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  hugo:
+    # image: hugomods/hugo:latest # Use build context instead
+    build: .devcontainer
+    volumes:
+      - ../hu-bioinfo.github.io:/src
+      - ./hugo_cache:/src/resources # Persist Hugo cache
+    ports:
+      - "1313:1313"
+    working_dir: /src
+    command: ["hugo", "server", "-D", "--bind", "0.0.0.0", "--baseURL", "http://localhost:1313/", "--appendPort=false"]
+    environment:
+      - HUGO_ENV=development
+      - LANG=ja_JP.UTF-8
+      - TZ=Asia/Tokyo

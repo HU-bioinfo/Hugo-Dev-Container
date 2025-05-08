@@ -1,0 +1,18 @@
+{
+	"name": "Hugo Dev Container",
+	"dockerComposeFile": "../docker-compose.yml",
+	"service": "hugo",
+	"workspaceFolder": "/src",
+	"forwardPorts": [1313],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"bungcip.better-toml", // TOML support
+				"davidanson.vscode-markdownlint", // Markdown linting
+				"eliostruyf.vscode-front-matter", // Front Matter support
+				"budparr.language-hugo-vscode", // Hugo language support
+				"hediet.vscode-drawio" // Draw.io support
+			]
+		}
+	}
+}
